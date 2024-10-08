@@ -55,12 +55,12 @@ export default function Header({children}) {
   return (
     <>
     {children}
-    <header className="max-w-[1440px] mx-auto pt-7 pb-3 flex items-center gap-[103px] py-3 h-[84px] min-[1440px]:h-fit px-4 md:px-8 min-[1440px]:px-28">
+    <header className="max-w-[1440px] mx-auto pt-7 pb-3 flex items-center gap-[103px] py-3 h-[84px] min-[1440px]:h-fit min-h-fit px-4 md:px-8 min-[1440px]:px-28 mb-4">
     <Image
         src="/logo.svg"
         alt="Al Zehra Perfumes"
-        width={100}
-        height={100}
+        width={90}
+        height={90}
         priority={true}
         draggable={false}
         className="select-none "
