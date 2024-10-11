@@ -1,5 +1,4 @@
 "use cleint"
-import React from 'react'
 
 export const themeRoundedBtn = ({text,href}) => {
   return (
