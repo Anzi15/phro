@@ -6,6 +6,7 @@ import Intro from "./components/Intro";
 import InitiativesCard from "./components/InitiativesCard";
 import { FaBowlFood, FaGraduationCap } from "react-icons/fa6";
 import { FaHandsHelping, FaTint } from "react-icons/fa";
+import Link from "next/link";
 
 // export const metadata = {
 //   title: 'My Page Title',
@@ -95,13 +96,21 @@ link: "/initiative/world-hunger"
           />
         </Carousel>
         <Intro />
-        <div className="grid md:grid-cols-4 gird-cols-2 gap-6 p-6 bg-gray-300">
+        <section className="">
+          <div className="w-full flex justify-between p-3">
+          <h2 className="py-4 text-3xl font-bold uppercase text-center text-blue-600">Our Components</h2>
+            
+            <Link href="/componenets">view all</Link>
+
+          </div>
+        <div className="grid md:grid-cols-4 gird-cols-2 gap-6 p-6 ">
           {initiatives.map((initiative, i)=>{
             return(
               <InitiativesCard key={i} icon={initiative.icon} title={initiative.title} description={initiative.description}/>
             )
           })}
         </div>
+        </section>
       </main>
     </>
   );
