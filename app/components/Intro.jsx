@@ -5,8 +5,11 @@ import Image from "next/image"
 const Intro = () => {
   return (
     <main className="p-8 flex gap-4 items-center justify-between">
-      <div className="md:w1/2 w-full">
-       <Image src="/kits.webp" width={1080} height={1080} className="aspect-square object-cover rounded-md p-6"/>
+      <div className="md:w1/2 w-full aspect-square p-8 overflow-hidden">
+      <div  className="aspect-square object-cover rounded-md h-min overflow-hidden transition-all cursor-pointer">
+       <Image src="/kits.webp" width={1080} height={1080} className="w-full aspect-square rounded-lg hover:scale-110 object-cover transition-all  duration-150"/>
+
+      </div>
       </div>
       <div className="md:w1/2 w-full">
         <h1 className="text-3xl font-semibold text-gray-900 my-10">
