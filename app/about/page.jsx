@@ -1,42 +1,141 @@
 import React from 'react'
+import Image from 'next/image'
+// import CustomerBenefits from '../components'
+// import TestimonialSlider from '../components/testimonials-slider'
+// import FaqsSection from '../components/FaqsSection'
 
 const page = () => {
   return (
     <main>
-                                                      <section class="py-24 bg-gray-50">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center flex-col lg:flex-row md:mt-20">
-                <div class="w-full lg:w-1/2">
-                    <h2
-                        class="font-manrope text-5xl text-gray-900 font-bold leading-[4rem] mb-7 text-center lg:text-left">
-                        Our leading, strong & creative team</h2>
-                    <p class="text-lg text-gray-500 mb-16 text-center lg:text-left">These people work on making our
-                        product best.</p>
-                    <button class="cursor-pointer py-3 px-8 w-60 bg-indigo-600 text-white text-base font-semibold transition-all duration-500 block text-center rounded-full hover:bg-indigo-700 mx-auto lg:mx-0">Join
-                        our team</button>
-                </div>
-                <div class="w-full lg:w-1/2 lg:mt-0 md:mt-40 mt-16 max-lg:max-w-2xl">
-                    <div class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-8">
-                        <img src="https://pagedone.io/asset/uploads/1696238644.png" alt="Team tailwind section"
-                            class="w-44 h-56 rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0" />
-                        <img src="https://pagedone.io/asset/uploads/1696238665.png" alt="Team tailwind section"
-                            class="w-44 h-56 rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mx-auto" />
-                        <img src="https://pagedone.io/asset/uploads/1696238684.png" alt="Team tailwind section"
-                            class="w-44 h-56 rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:ml-0" />
-                        <img src="https://pagedone.io/asset/uploads/1696238702.png" alt="Team tailwind section"
-                            class="w-44 h-56 rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0 md:ml-auto" />
-                        <img src="https://pagedone.io/asset/uploads/1696238720.png" alt="Team tailwind section"
-                            class="w-44 h-56 rounded-2xl object-cover md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto" />
-                        <img src="https://pagedone.io/asset/uploads/1696238737.png" alt="Team tailwind section"
-                            class="w-44 h-56 rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0" />
+    <section className="bg-white dark:bg-gray-900">
+      <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 text-left">
+        <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Empowering Communities for a Brighter Future
+            </h2>
 
-                    </div>
-                </div>
-            </div>
+            <p>
+              At PHRO, we are dedicated to protecting human rights, providing education, and uplifting communities. 
+              Our mission is to create a society where every individual is treated with dignity and respect. 
+              Together, we can ensure justice and equality for all.
+            </p>
         </div>
+        <div className="grid grid-cols-2 gap-4 mt-8 select-none">
+            <Image
+              className="w-full skeleton-loading rounded-lg min-h-[17rem]"
+              src="https://example.com/path-to-image1.jpg"
+              alt="Empowering communities"
+              width={640}
+              height={854}
+            />
+
+            <Image
+              className="mt-4 w-full min-h-[17rem] skeleton-loading lg:mt-10 rounded-lg"
+              src="https://example.com/path-to-image2.jpg"
+              alt="Human rights activism"
+              width={640}
+              height={854}
+            />
+        </div>
+      </div>
     </section>
-                                            
-    </main>
+
+    <section className="bg-white dark:bg-gray-900 p-5 px-10 flex justify-center my-10">
+      <div className="md:w-[40%] w-full flex flex-col py-4 gap-6">
+          
+          <h2 className="text-3xl font-bold uppercase text-brandRed">
+            Our Mission
+          </h2>
+         
+          <p className="text-lg font-normal">
+            At PHRO, we aim to protect and promote human rights through advocacy, awareness, and education. 
+            Our initiatives focus on providing relief to those in need, advocating for gender equality, 
+            and ensuring access to basic human rights such as education, health, and justice.
+          </p>
+         
+      </div>
+    </section>
+
+    <section className="w-full flex py-10 items-center justify-between md:flex-row flex-col flex-wrap md:gap-0 gap-6">
+      <div className="md:w-1/2 w-[95%] text-center">
+          
+          <h2 className="text-2xl font-bold uppercase text-brandRed py-2">
+            Educational Programs
+          </h2>
+          <p className="text-lg font-normal">
+            We believe in empowering future generations through education. Our programs provide access to quality education 
+            for underprivileged children and youth.
+          </p>
+         
+      </div>
+
+      <div className="md:w-1/2 w-[95%] text-center">
+          
+          <Image
+            src="https://example.com/path-to-education-image.jpg"
+            alt="Educational programs"
+            height={428}
+            width={639}
+            className="aspect-video rounded-lg"
+          />
+         
+      </div>
+    </section>
+
+    <section className="w-full flex py-10 items-center justify-between md:flex-row flex-col-reverse flex-wrap md:gap-0 gap-6 md:pl-6">
+      <div className="md:w-1/2 w-[95%] text-center">
+          
+          <Image
+            src="https://example.com/path-to-image3.jpg"
+            alt="Human rights advocacy"
+            height={428}
+            width={639}
+            className="aspect-video rounded-lg"
+          />
+         
+      </div>
+      <div className="md:w-1/2 w-[95%] text-center">
+          
+          <h2 className="text-2xl font-bold uppercase text-brandRed py-2">
+            Human Rights Advocacy
+          </h2>
+          <p className="text-lg font-normal">
+            Our advocacy programs focus on raising awareness about human rights violations and working with 
+            government bodies to protect the rights of vulnerable communities.
+          </p>
+         
+      </div>
+    </section>
+
+    <section className="w-full flex py-10 items-center justify-between md:flex-row flex-col flex-wrap md:gap-0 gap-6">
+      <div className="md:w-1/2 w-[95%] text-center">
+          
+          <h2 className="text-2xl font-bold uppercase text-brandRed py-2">
+            Relief and Aid Services
+          </h2>
+          <p className="text-lg font-normal">
+            PHRO provides essential relief services to those affected by disasters, poverty, and conflict, 
+            offering food, shelter, and medical assistance to those in need.
+          </p>
+         
+      </div>
+      <div className="md:w-1/2 w-[95%] text-center">
+          
+          <Image
+            src="https://example.com/path-to-image4.jpg"
+            alt="Relief and aid"
+            height={428}
+            width={639}
+            className="aspect-video rounded-lg"
+          />
+         
+      </div>
+    </section>
+
+    {/* <CustomerBenefits />
+    <TestimonialSlider bgColor="#575761" />
+    <FaqsSection /> */}
+  </main>
   )
 }
 

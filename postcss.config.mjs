@@ -3,14 +3,6 @@ const config = {
   plugins: {
     tailwindcss: {},
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-      },
-    ],
-  },
 };
 
 export default config;
