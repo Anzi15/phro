@@ -120,10 +120,14 @@ export default function Home() {
         </section>
 
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="mb-12">
-            <h2 class="font-manrope text-5xl text-center font-bold text-gray-900 ">
-              Our team{" "}
+        <div className="w-full flex justify-between p-4">
+            <h2 className="py-4 text-3xl font-bold uppercase text-center text-blue-600">
+              Our BOD
             </h2>
+
+            <Link href="/bod" className="underline">
+              view all
+            </Link>
           </div>
           <div class="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-5 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
             <TeamCard />
