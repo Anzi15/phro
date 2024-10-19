@@ -1,22 +1,27 @@
+import Image from "next/image"
+import Link from "next/link";
 import React from "react";
 
-const TeamCard = () => {
+const TeamCard = ({name, profile, role}) => {
   return (
-    <div class="block group md:col-span-2 lg:col-span-1 ">
+    <Link href={`/bods/${role}`} class="block group ">
       <div class="relative mb-6">
-        <img
-          src="https://pagedone.io/asset/uploads/1696238374.png"
-          alt="Antonio image"
-          class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600"
+        
+        <Image
+          src={profile}
+          alt={name}
+          width={720}
+          height={720}
+          class="w-full rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600"
         />
       </div>
       <h4 class="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
-        Antonio Roberto{" "}
+        {name}
       </h4>
       <span class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">
-        Founder
+        {role}
       </span>
-    </div>
+    </Link>
   );
 };
 

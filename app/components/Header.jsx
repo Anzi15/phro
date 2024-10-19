@@ -35,8 +35,8 @@ const links = [
   },
   {
     id: 5,
-    name: "Our Team",
-    href: "/team",
+    name: "Our BODs",
+    href: "/bods",
   },
   {
     id: 5,

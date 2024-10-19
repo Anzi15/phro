@@ -8,6 +8,7 @@ import { FaBowlFood, FaGraduationCap } from "react-icons/fa6";
 import { FaHandsHelping, FaTint } from "react-icons/fa";
 import Link from "next/link";
 import TeamCard from "./components/TeamCard";
+import bodData from "./data/bodMembers.json"
 
 // export const metadata = {
 //   title: 'My Page Title',
@@ -49,6 +50,8 @@ export default function Home() {
       link: "/initiative/clean-water-access",
     },
   ];
+
+
   return (
     <>
       <main>
@@ -125,12 +128,18 @@ export default function Home() {
               Our BOD
             </h2>
 
-            <Link href="/bod" className="underline">
+            <Link href="/bods" className="underline">
               view all
             </Link>
           </div>
-          <div class="grid grid-cols-1 min-[500px]:grid-cols-2 md:grid-cols-6 lg:grid-cols-5 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
-            <TeamCard />
+          <div class="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+            {
+              bodData.slice(0,4).map((member, i)=>{
+                return (
+                  <TeamCard key={i} name={member.name} profile={member.profile} role={member.role}/>
+                )
+              })
+            }
           </div>
         </div>
       </main>
