@@ -9,6 +9,8 @@ import { FaHandsHelping, FaTint } from "react-icons/fa";
 import Link from "next/link";
 import TeamCard from "./components/TeamCard";
 import bodData from "./data/bodMembers.json"
+import successStoiresData from "./data/successStories.json"
+import SuccessStoryCard from "./components/SuccessStoryCard";
 
 // export const metadata = {
 //   title: 'My Page Title',
@@ -122,7 +124,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10 lg:px-8">
         <div className="w-full flex justify-between p-4">
             <h2 className="py-4 text-3xl font-bold uppercase text-center text-blue-600">
               Our BOD
@@ -142,6 +144,31 @@ export default function Home() {
             }
           </div>
         </div>
+
+
+        {/* success stories  */}
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="w-full flex justify-between p-4">
+            <h2 className="py-4 text-3xl font-bold uppercase text-center text-blue-600">
+              Success Stories
+            </h2>
+
+            <Link href="/success-stories" className="underline">
+              view all
+            </Link>
+          </div>
+          <div class="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+            {
+              successStoiresData.slice(0,4).map((story, i)=>{
+                return (
+                  <SuccessStoryCard key={i} title={story.title} image={story.image} description={story.content.slice(0,50)+"..."} link="/" />
+                )
+              })
+            }
+          </div>
+        </div>
+
+
       </main>
     </>
   );
