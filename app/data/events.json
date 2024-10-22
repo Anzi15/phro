@@ -1,0 +1,48 @@
+[
+    {
+      "title": "Women Empowerment Workshop",
+      "imageSrc": "https://loremflickr.com/320/240/",
+      "description": "<p>This workshop aimed to provide women with the skills and knowledge needed to <strong>become financially independent</strong> and raise awareness about their rights. <br> The session was led by experts in education and legal matters.</p><img src='https://loremflickr.com/400/300/workshop' alt='Women Empowerment Workshop' />",
+      "date": "2023-08-15",
+      "location": "Lahore, Pakistan",
+      "category": "Awareness",
+      "slug": "women-empowerment-workshop"
+    },
+    {
+      "title": "Health Camp for Rural Communities",
+      "imageSrc": "https://loremflickr.com/320/240/healthcare",
+      "description": "<p>A <strong>free medical camp</strong> offering basic health check-ups and medicines to underserved communities. <br>Doctors and volunteers provided guidance on hygiene and preventive care.</p><img src='https://loremflickr.com/400/300/medical' alt='Health Camp for Rural Communities' />",
+      "date": "2024-01-10",
+      "location": "Tharparkar, Pakistan",
+      "category": "Health",
+      "slug": "health-camp-for-rural-communities"
+    },
+    {
+      "title": "Education for All: School Supplies Drive",
+      "imageSrc": "https://loremflickr.com/320/240/education",
+      "description": "<p>PHRO successfully organized a drive to collect and distribute <strong>school supplies</strong> for children in remote areas. <br>The goal was to ensure that every child has the tools to succeed in education.</p><img src='https://loremflickr.com/400/300/school' alt='Education for All Drive' />",
+      "date": "2023-09-05",
+      "location": "Islamabad, Pakistan",
+      "category": "Fundraising",
+      "slug": "education-for-all-school-supplies-drive"
+    },
+    {
+      "title": "Human Rights Awareness Walk",
+      "imageSrc": "https://loremflickr.com/320/240/protest",
+      "description": "<p>The <strong>Human Rights Awareness Walk</strong> aimed at raising awareness about human rights issues affecting marginalized communities. <br>Participants held banners and gave speeches advocating for equal rights for all.</p><img src='https://loremflickr.com/400/300/protest' alt='Human Rights Walk' />",
+      "date": "2023-12-01",
+      "location": "Karachi, Pakistan",
+      "category": "Awareness",
+      "slug": "human-rights-awareness-walk"
+    },
+    {
+      "title": "Disaster Relief Fundraiser",
+      "imageSrc": "https://loremflickr.com/320/240/relief",
+      "description": "<p>In response to recent floods, PHRO organized a <strong>disaster relief fundraiser</strong> to provide essential supplies, shelter, and medical aid to those affected.</p><img src='https://loremflickr.com/400/300/aid' alt='Disaster Relief Fundraiser' />",
+      "date": "2024-02-20",
+      "location": "Multan, Pakistan",
+      "category": "Fundraising",
+      "slug": "disaster-relief-fundraiser"
+    }
+  ]
+  

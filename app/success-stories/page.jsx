@@ -13,7 +13,7 @@ const page = () => {
         </h2>
       </div>
       <div class="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
-        {successStoiresData.slice(0, 4).map((story, i) => {
+        {successStoiresData.map((story, i) => {
           return (
             <SuccessStoryCard
               key={i}
