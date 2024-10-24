@@ -20,7 +20,7 @@ const page = () => {
               title={story.title}
               image={story.image}
               description={story.content.slice(0, 50) + "..."}
-              link="/"
+              link={`/success-stories/${story.slug}`}
             />
           );
         })}

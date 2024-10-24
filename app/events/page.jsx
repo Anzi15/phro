@@ -13,7 +13,7 @@ const page = () => {
           Events
         </h2>
       </div>
-      <div className="grid gird-cols-2 md:grid-cols-4 gap-8 ma">
+      <div className="grid gird-cols-1 md:grid-cols-2 gap-8 ma">
       {
         eventsData.slice(0, 4).map((event, i) => {
           return (

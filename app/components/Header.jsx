@@ -20,13 +20,8 @@ const links = [
   },
   {
     id: 3,
-    name: "Meetings",
-    href: "/meetings",
-  },
-  {
-    id: 4,
-    name: "Gallery",
-    href: "/gallery",
+    name: "Success Stories",
+    href: "/success-stories",
   },
   {
     id: 5,
