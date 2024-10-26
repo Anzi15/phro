@@ -1,7 +1,10 @@
+"use client"
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer"
+import { usePathname } from "next/navigation";
+import { Main } from "next/document";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,20 +17,31 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
-  title: "Protection & Human Right Organization | PHRO",
-  description: "Protection & Human Rights Organization (PHRO) is a dedicated humanitarian organization committed to promoting and protecting human rights across the globe.",
-};
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const hideHeaderFooter = pathname === '/checkout' || pathname.startsWith('/admin');
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
-        {children}
-        <Footer/>
+        {
+          hideHeaderFooter ? (
+            <div>
+              {children}
+            </div>
+            
+          ) : 
+          (
+            <>
+            <Header/>
+            {children}
+            <Footer/>
+            </>
+          )
+        }
       </body>
     </html>
   );
