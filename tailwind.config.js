@@ -18,5 +18,8 @@ module.exports = withMT({
   },
   plugins: [
     require('flowbite-typography'),
+    require('flowbite/plugin')({
+      wysiwyg: true,
+  }),
   ],
 });
