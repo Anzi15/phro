@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import { TagsInput } from "react-tag-input-component";
 import InputField from "@/app/components/InputField.jsx";
 import Swal from "sweetalert2";
-import storage from "../../../lib/firebase/config"; // Adjusted path to the storage config
+import { storage } from "../../../lib/firebase/config"; // Adjusted path to the storage config
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useRouter } from "next/navigation"; // Use Next.js router
 
@@ -59,20 +59,27 @@ const AdminNewBlogPage = () => {
     checkForExistence();
   }, [slug]);
 
-  const uploadImage = async (file) => {
+  const uploadImage = async (previewUrl) => {
     try {
+      // Fetch blob data from the preview URL
+      const response = await fetch(previewUrl);
+      const fileBlob = await response.blob();
+      
+      // Proceed with Firebase storage upload
       const storageRef = ref(storage, `images/${uuidv4()}`);
       const img = document.createElement('img');
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
-
+  
       return new Promise((resolve, reject) => {
         img.onload = async () => {
-          await uploadBytes(storageRef, file);
+          // Upload the original image
+          await uploadBytes(storageRef, fileBlob);
           const originalUrl = await getDownloadURL(storageRef);
           const sizes = [200, 400, 800];
           const thumbnailUrls = [];
-
+  
+          // Generate and upload thumbnails
           for (const size of sizes) {
             canvas.width = size;
             canvas.height = size;
@@ -83,7 +90,7 @@ const AdminNewBlogPage = () => {
                 await uploadBytes(thumbnailRef, blob);
                 const thumbnailUrl = await getDownloadURL(thumbnailRef);
                 thumbnailUrls.push({ size, url: thumbnailUrl });
-
+  
                 if (thumbnailUrls.length === sizes.length) {
                   resolve({ originalUrl, thumbnails: thumbnailUrls });
                 }
@@ -93,24 +100,25 @@ const AdminNewBlogPage = () => {
               }
             }, 'image/jpeg');
           }
-
+  
+          // Resolve immediately if no sizes are set
           if (sizes.length === 0) {
             resolve({ originalUrl, thumbnails: [] });
           }
         };
-
+  
         img.onerror = (error) => {
           console.error('Error loading image:', error);
           reject(error);
         };
-
-        img.src = URL.createObjectURL(file);
+  
+        img.src = URL.createObjectURL(fileBlob); // Set image src to the blob object URL
       });
     } catch (error) {
       console.error("Error uploading file:", error);
       throw error;
     }
-  };
+  }
 
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
@@ -149,7 +157,7 @@ const AdminNewBlogPage = () => {
       return; // Early return if slug already exists
     }
 
-    const uploadedCoverImage = uploadImage(coverImage.preview)
+    const uploadedCoverImage = await uploadImage(coverImage.preview)
 
     setPublishing(true);
     const blogData = {
@@ -161,9 +169,10 @@ const AdminNewBlogPage = () => {
       tags: selectedTags,
     };
 
+    console.log(blogData)
     try {
       setPublishingMsg("Connecting to database..");
-      const docRef = doc(db, "Blogs", slug); // Use slug as document ID
+      const docRef = doc(db, "blogs", slug); // Use slug as document ID
       await setDoc(docRef, blogData);
       setPublishingMsg("All Set !!");
       Swal.fire({
