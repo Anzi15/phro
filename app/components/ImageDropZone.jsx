@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 const ImageDropZone = ({ storeFileToUpload, displayImg }) => {
-  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [uploadedFile, setUploadedFile] = useState(null);
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*', 
     onDrop: (acceptedFiles) => {
-      const newFiles = acceptedFiles.map((file) => ({
-        ...file,
-        preview: URL.createObjectURL(file), 
-      }));
-      setUploadedFiles((prevFiles) => [...prevFiles, ...newFiles]);
-      newFiles.forEach(file => storeFileToUpload(file)); // Store file immediately if needed
+      if (acceptedFiles.length > 0) {
+        const file = acceptedFiles[0];
+        const fileWithPreview = {
+          ...file,
+          preview: URL.createObjectURL(file),
+        };
+        setUploadedFile(fileWithPreview);
+        storeFileToUpload(fileWithPreview); // Store the single file immediately if needed
+      }
     },
   });
 
@@ -24,14 +27,16 @@ const ImageDropZone = ({ storeFileToUpload, displayImg }) => {
     e.currentTarget.classList.remove('bg-blue-200', 'scale-[1.02]', 'border-4');
   };
 
-  // Cleanup object URLs when component unmounts
+  // Cleanup object URL when component unmounts
   useEffect(() => {
     return () => {
-      uploadedFiles.forEach((file) => URL.revokeObjectURL(file.preview));
+      if (uploadedFile) {
+        URL.revokeObjectURL(uploadedFile.preview);
+      }
     };
-  }, [uploadedFiles]);
+  }, [uploadedFile]);
 
-  const hasUploadedFiles = uploadedFiles.length > 0;
+  const hasUploadedFile = Boolean(uploadedFile);
   const hasDisplayImg = Boolean(displayImg);
 
   return (
@@ -41,19 +46,19 @@ const ImageDropZone = ({ storeFileToUpload, displayImg }) => {
         onDragLeave: handleDragLeave,
         onDrop: handleDragLeave
       })}
-      className={`aspect-video min-h-[10rem] flex items-center justify-center bg-blue-50 border-blue-300 border-2 rounded-lg transition-all duration-200 overflow-hidden ${!hasUploadedFiles && !hasDisplayImg ? "p-4" : ""}`}
+      className={`aspect-video min-h-[10rem] flex items-center justify-center bg-blue-50 border-blue-300 border-2 rounded-lg transition-all duration-200 overflow-hidden ${!hasUploadedFile && !hasDisplayImg ? "p-4" : ""}`}
     >
       <input {...getInputProps()} />
-      {!hasUploadedFiles && !hasDisplayImg && <p>Drag and drop files here or click to browse.</p>}
+      {!hasUploadedFile && !hasDisplayImg && <p>Drag and drop a file here or click to browse.</p>}
       <ul className="flex flex-wrap gap-2">
-        {hasUploadedFiles && uploadedFiles.map((file) => (
-          <li key={file.name} className="relative">
-            <img src={file.preview} alt={file.name} className="w-full aspect-square object-cover rounded" />
+        {hasUploadedFile && (
+          <li key={uploadedFile.name} className="relative">
+            <img src={uploadedFile.preview} alt={uploadedFile.name} className="w-full aspect-square object-cover rounded" />
           </li>
-        ))}
-        {hasDisplayImg && (
-          <li className="relative w-full">
-            <img src={displayImg} alt="preview" className="w-full aspect-video object-cover rounded" />
+        )}
+        {hasUploadedFile ? "" : hasDisplayImg && (
+          <li className="relative w-full items-center flex">
+            <img src={displayImg} alt="preview" className="w-full aspect-video object-cover rounded " />
           </li>
         )}
       </ul>

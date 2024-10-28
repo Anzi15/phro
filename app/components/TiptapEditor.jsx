@@ -6,7 +6,7 @@ import TaskList from '@tiptap/extension-task-list';
 import TaskItem from '@tiptap/extension-task-item';
 import CharacterCount from '@tiptap/extension-character-count';
 import Image from '@tiptap/extension-image';
-import Iframe from '../IframeExtensionTipTap';
+import Iframe from './IframeExtensionTipTap';
 import Heading from '@tiptap/extension-heading';
 import MenuBar from "../MenuBar.jsx";
 import "./tiptapStylings.scss";

@@ -1,5 +1,5 @@
-import AdminBlogCard from '@/app/components/AdminBlogCard'
-import { db } from '@/app/lib/firebase/config'
+import AdminBlogCard from "../../components/AdminBlogCard"
+import {db} from "../../lib/firebase/config"
 import { collection, getDocs } from 'firebase/firestore'
 import React from 'react'
 import Link from 'next/link'
@@ -11,7 +11,7 @@ const page = async () => {
     allBlogPostsDocs.forEach((blog)=>blogPosts.push({id: blog.id, ...blog.data()}))
   return (
     <main className="my-8">
-    <h1 className="text-5xl text-left   ">Manage Products</h1>
+    <h1 className="text-5xl text-left   ">Manage Blogs</h1>
 
     <section className="my-8 md:w-[80vw]">
       <div className="w-full flex md:justify-end">

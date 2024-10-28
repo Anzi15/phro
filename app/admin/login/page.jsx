@@ -12,7 +12,7 @@ import {
   useSignInWithGoogle,
   useSendPasswordResetEmail,
 } from "react-firebase-hooks/auth";
-import { auth } from "@/app/lib/firebase/config";
+import { auth } from "../../lib/firebase/config";
 
 const AdminLoginPage = () => {
   const [sendPasswordResetEmail, passResetSending, passResetError] =

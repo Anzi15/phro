@@ -1,4 +1,4 @@
-import { db } from "@/app/lib/firebase/config";
+import { db } from "../../lib/firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
@@ -55,11 +55,12 @@ const page = async ({ params }) => {
     <main class="pb-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
       <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert md:p-0 p-6">
         <header class="mb-4 lg:mb-6 not-format flex flex-col gap-6">
-          <Image
+        <Image
             src={blogData.coverImage}
             width={1080}
             height={720}
-            className="skeleton-loading w-screen"
+            className="skeleton-loading w-screen aspect-video object-cover "
+            alt={blogData.title} // Added alt text for accessibility
           />
           <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
             {blogData.title}
