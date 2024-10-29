@@ -24,7 +24,7 @@ const Intro = () => {
         </p>
         <div className="flex gap-4 py-6">
         <Link className="p-3 px-4 rounded-full bg-blue-700 text-white font-bold hover:bg-blue-900 transition-all" href="/donate">Donate now</Link>
-        <Link href="/about" className="p-3 px-4 rounded-full text-gray-700 font-bold border-2 transition-all border-gray-700">About us</Link>
+        <Link href="/volunteer-request" className="p-3 px-4 rounded-full text-gray-700 font-bold border-2 transition-all border-gray-700">Become a volunteer</Link>
         </div>
       </div>
     </main>
