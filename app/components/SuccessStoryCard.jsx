@@ -21,12 +21,12 @@ const SuccessStoryCard = ({
         />
       </Link>
       <div className="p-5">
-        <Link href={link}>
+        <Link href={link || "/"}>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {title}
+            {title || "untitled"}
           </h5>
         </Link>
-        <p dangerouslySetInnerHTML={{__html: description}} className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p dangerouslySetInnerHTML={{__html: description || "<p>no description</p>"}} className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           
         </p>
         <Link href={link}>

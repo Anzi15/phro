@@ -2,11 +2,14 @@
 import Image from "next/image";
 import { Carousel } from "@material-tailwind/react";
 import "react-icons";
+import BlogCard from "./components/BlogCard"
 import Intro from "./components/Intro";
 import InitiativesCard from "./components/InitiativesCard";
 import { FaBowlFood, FaGraduationCap } from "react-icons/fa6";
 import { FaHandsHelping, FaTint } from "react-icons/fa";
+import { collection, getDocs, limit } from "firebase/firestore";
 import Link from "next/link";
+import { db } from "./lib/firebase/config";
 import stripHtml from "./helper/htmlBuster";
 import TeamCard from "./components/TeamCard";
 import bodData from "./data/bodMembers.json";
@@ -15,43 +18,44 @@ import eventsData from "./data/events.json";
 import SuccessStoryCard from "./components/SuccessStoryCard";
 import EventCard from "./components/EventCard";
 import componentsData from "./data/componenets.json";
+import {
+  FaBalanceScale,
+  FaHandHoldingHeart,
+  FaChild,
+  FaBook,
+  FaLeaf,
+  FaVenusMars,
+  FaTools,
+} from "react-icons/fa";
+import { useEffect, useState } from "react";
+const iconMapping = {
+  FaBalanceScale: FaBalanceScale,
+  FaHandHoldingHeart: FaHandHoldingHeart,
+  FaChild: FaChild,
+  FaBook: FaBook,
+  FaLeaf: FaLeaf,
+  FaVenusMars: FaVenusMars,
+  FaTools: FaTools,
+};
 
 export default function Home() {
-  const initiatives = [
-    {
-      icon: <FaBowlFood className="text-3xl text-blue-700" />,
-      title: "World Hunger",
-      description: `we believe that access to food is a basic human right, yet millions across the globe still suffer from hunger. Our "Fighting World Hunger" initiative is dedicated to ending hunger by delivering sustainable, long-term solutions to food insecurity.
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-      Our approach combines emergency food relief for communities in crisis, along with empowering local populations through education, agricultural training, and resource distribution. We work closely with farmers, local leaders, and partner organizations to improve food production, reduce waste, and build resilient food systems. Through innovative farming techniques, water management systems, and nutrition programs, we aim to address both the immediate and root causes of hunger.
-`,
-      link: "/initiative/world-hunger",
-    },
-    {
-      icon: <FaHandsHelping className="text-3xl text-blue-700" />,
-      title: "Disaster Relief",
-      description: `Natural disasters can strike without warning, leaving communities devastated and in urgent need of support. Our "Disaster Relief" initiative is focused on providing immediate aid and long-term recovery solutions to those affected by floods, earthquakes, and other catastrophes.
-    
-      We deliver emergency supplies such as food, water, and medical care, while also helping communities rebuild their homes and lives. Through partnerships with local organizations, we ensure a coordinated response to disasters and help vulnerable populations regain stability in their daily lives.`,
-      link: "/initiative/disaster-relief",
-    },
-    {
-      icon: <FaGraduationCap className="text-3xl text-blue-700" />,
-      title: "Education for All",
-      description: `Education is the foundation for a brighter future, yet millions of children worldwide are deprived of this essential right. Our "Education for All" initiative aims to provide access to quality education, regardless of a child’s location, gender, or socioeconomic status.
-    
-      We build and support schools in underserved regions, provide educational materials, and offer scholarships for children who might otherwise miss out. By equipping students with knowledge and skills, we empower them to break the cycle of poverty and contribute to the development of their communities.`,
-      link: "/initiative/education-for-all",
-    },
-    {
-      icon: <FaTint className="text-3xl text-blue-700" />,
-      title: "Clean Water Access",
-      description: `Water is life, but millions of people around the world still lack access to safe, clean drinking water. Our "Clean Water Access" initiative is dedicated to providing sustainable water solutions in regions where water scarcity and contamination are critical issues.
-    
-      We install wells, rainwater harvesting systems, and water purification technologies to ensure communities have reliable access to clean water. Additionally, we promote hygiene and sanitation education to improve health outcomes and prevent waterborne diseases, transforming lives through clean, accessible water.`,
-      link: "/initiative/clean-water-access",
-    },
-  ];
+  useEffect(() => {
+    async function fetchBlogs() {
+      const collectionRef = collection(db, 'blogs');
+      const blogsArr = await getDocs(collectionRef, limit(2));
+      const blogsData = [];
+      blogsArr.forEach((blog) => {
+        blogsData.push({ ...blog.data(), id: blog.id });
+      });
+      setBlogs([...blogsData]);
+      setLoading(false);
+    }
+
+    fetchBlogs()
+  }, []);
 
   return (
     <>
@@ -112,10 +116,11 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-4 gird-cols-2 gap-6 p-6 ">
             {componentsData.slice(0, 4).map((initiative, i) => {
+              const Icon = iconMapping[initiative.icon];
               return (
                 <InitiativesCard
                   key={i}
-                  icon={initiative.icon}
+                  icon={Icon} // Pass the actual component
                   title={initiative.title}
                   description={initiative.description}
                 />
@@ -195,14 +200,41 @@ export default function Home() {
                   key={i}
                   title={event.title}
                   imageSrc={event.imageSrc}
-                  // Strip HTML and slice the first 50 characters
-                  description={
-                    stripHtml(event.description).slice(0, 50) + "..."
-                  }
                   link={`/events/${event.slug}`}
                 />
               );
             })}
+          </div>
+        </div>
+        
+        {/* Blogs  */}
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+          <div className="w-full flex justify-between items-center p-4">
+            <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
+              {" "}
+              Blogs
+            </h2>
+
+            <Link href="/blogs" className="underline">
+              view all
+            </Link>
+          </div>
+          <div className="grid gird-cols-1 md:grid-cols-2 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+          {blogs.length > 0 ? (
+  blogs.map((blog, i) => (
+    <BlogCard
+      key={i}
+      title={blog.title}
+      coverImage={blog.coverImage}
+      link={`/blog/${blog.id}`}
+    />
+  ))
+) : (
+  <>
+    <BlogCard loading={true} />
+    <BlogCard loading={true} />
+  </>
+)}
           </div>
         </div>
       </main>

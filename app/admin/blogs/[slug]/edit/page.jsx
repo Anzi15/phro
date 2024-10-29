@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import { TagsInput } from "react-tag-input-component";
 import InputField from "../../../../components/InputField"
 import Swal from "sweetalert2";
-import storage from "../../../../lib/firebase/config" 
+import {storage} from "../../../../lib/firebase/config" 
 import uploadImage from "../../../../helper/imageUploader";
 import { useRouter } from "next/navigation"; // Use Next.js router
 
