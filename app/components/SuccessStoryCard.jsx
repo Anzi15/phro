@@ -10,7 +10,7 @@ const SuccessStoryCard = ({
   linkText = 'Read more',
 }) => {
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="max-w-screen mx-4 overflow-hidden bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <Link href={link}>
         <Image 
           className="rounded-t-lg" 

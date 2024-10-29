@@ -10,7 +10,7 @@ import {
   useAuthState,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { auth } from "@/app/lib/firebase/config";
+import { auth } from "../../lib/firebase/config";
 
 const AdminSignUpPage = () => {
   const [email, setEmail] = useState("");

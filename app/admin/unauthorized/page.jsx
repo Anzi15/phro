@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { auth } from "@/app/lib/firebase/config";
+import { auth } from "../../lib/firebase/config";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 

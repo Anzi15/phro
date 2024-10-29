@@ -7,7 +7,7 @@ import Image from 'next/image'
 const page = () => {
   return (
     <main>
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white dark:bg-gray-900 text-center">
       <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 text-left">
         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -22,16 +22,16 @@ const page = () => {
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8 select-none">
             <Image
-              className="w-full skeleton-loading rounded-lg min-h-[17rem]"
-              src="https://example.com/path-to-image1.jpg"
+              className="w-full aspect-[10/16] object-cover  skeleton-loading rounded-lg min-h-[17rem]"
+              src="https://i.ibb.co/0D66Nj1/shakib-uzzaman-4-RMw-H-XChyw-unsplash.jpg"
               alt="Empowering communities"
               width={640}
               height={854}
             />
 
             <Image
-              className="mt-4 w-full min-h-[17rem] skeleton-loading lg:mt-10 rounded-lg"
-              src="https://example.com/path-to-image2.jpg"
+              className="mt-4 w-full min-h-[17rem] skeleton-loading lg:mt-10 rounded-lg aspect-[10/16] object-cover"
+              src="https://i.ibb.co/CmTyyr2/gene-brutty-1aw-Tw-T66eb0-unsplash.jpg"
               alt="Human rights activism"
               width={640}
               height={854}
@@ -69,7 +69,7 @@ const page = () => {
          
       </div>
 
-      <div className="md:w-1/2 w-[95%] text-center">
+      <div className="md:w-1/2 w-[95%] text-center p-10">
           
           <Image
             src="https://example.com/path-to-education-image.jpg"
@@ -83,7 +83,7 @@ const page = () => {
     </section>
 
     <section className="w-full flex py-10 items-center justify-between md:flex-row flex-col-reverse flex-wrap md:gap-0 gap-6 md:pl-6">
-      <div className="md:w-1/2 w-[95%] text-center">
+      <div className="md:w-1/2 w-[95%] text-center p-10">
           
           <Image
             src="https://example.com/path-to-image3.jpg"
@@ -108,7 +108,7 @@ const page = () => {
     </section>
 
     <section className="w-full flex py-10 items-center justify-between md:flex-row flex-col flex-wrap md:gap-0 gap-6">
-      <div className="md:w-1/2 w-[95%] text-center">
+      <div className="md:w-1/2 w-[95%] text-center p-10">
           
           <h2 className="text-2xl font-bold uppercase text-brandRed py-2">
             Relief and Aid Services

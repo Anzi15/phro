@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       >
         {
           hideHeaderFooter ? (
-            <div>
+            <div className="w-full max-w-screen">
               {children}
             </div>
             

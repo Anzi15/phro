@@ -50,7 +50,7 @@ export default function Header({children}) {
   return (
     <>
     {children}
-    <header className="max-w-[1440px] mx-auto pt-7 pb-3 flex items-center gap-[103px] py-3 h-[84px] min-[1440px]:h-fit min-h-fit px-4 md:px-8 min-[1440px]:px-28 mb-4">
+    <header className="max-w-screen w-full mx-auto pt-7 pb-3 flex items-center gap-[103px] py-3 h-[84px] min-[1440px]:h-fit min-h-fit px-4 md:px-8 min-[1440px]:px-28 mb-4">
     <Image
         src="/logo.svg"
         alt="Al Zehra Perfumes"
@@ -62,7 +62,7 @@ export default function Header({children}) {
       />
       <Navbar links={links} />
       <div className="flex justify-center items-center gap-4 ml-auto">
-        <Link className="p-3 px-4 rounded-full bg-blue-700 text-white font-bold hover:bg-blue-900 transition-all" href="/donate">Donate now</Link>
+        <Link className="p-3 px-4 rounded-full bg-blue-700 text-white font-bold hover:bg-blue-900 transition-all flex-nowrap text-nowrap" href="/donate">Donate now</Link>
         <HamburgerButton onClick={() => setIsMobileOpen(!isMobileOpen)} />
       </div>
       <MobileNavbar

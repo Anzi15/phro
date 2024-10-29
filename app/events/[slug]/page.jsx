@@ -14,9 +14,9 @@ const page = ({params}) => {
 
   
   return (
-    <section className="flex min-h-screen flex-col justify-center items-center">
+    <section className="flex min-h-screen flex-col justify-center items-center justify-center">
 <div className="py-12 w-full relative">
-  <h2 className="text-5xl absolute font-bold uppercase bg-white text-blue-600 z-20"
+  <h2 className="md:text-5xl text-3xl max-w-[90%] text-wrap p-4 absolute font-bold uppercase bg-white text-blue-600 z-20"
       style={{ 
         top: "50%", 
         left: "50%", 

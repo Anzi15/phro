@@ -1,7 +1,7 @@
 "use client";
-import Head from "next/head";
 import Image from "next/image";
 import { Carousel } from "@material-tailwind/react";
+import "react-icons";
 import Intro from "./components/Intro";
 import InitiativesCard from "./components/InitiativesCard";
 import { FaBowlFood, FaGraduationCap } from "react-icons/fa6";
@@ -14,10 +14,7 @@ import successStoiresData from "./data/successStories.json";
 import eventsData from "./data/events.json";
 import SuccessStoryCard from "./components/SuccessStoryCard";
 import EventCard from "./components/EventCard";
-
-// export const metadata = {
-//   title: 'My Page Title',
-// }
+import componentsData from "./data/componenets.json";
 
 export default function Home() {
   const initiatives = [
@@ -102,9 +99,10 @@ export default function Home() {
           />
         </Carousel>
         <Intro />
-        <section className="">
-          <div className="w-full flex justify-between p-4">
-            <h2 className="py-4 text-3xl font-bold uppercase text-center text-blue-600">
+        <section className="p-3">
+          <div className="w-full flex justify-between items-center p-4 flex-wrap">
+            <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
+              {" "}
               Our Components
             </h2>
 
@@ -113,7 +111,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid md:grid-cols-4 gird-cols-2 gap-6 p-6 ">
-            {initiatives.map((initiative, i) => {
+            {componentsData.slice(0, 4).map((initiative, i) => {
               return (
                 <InitiativesCard
                   key={i}
@@ -127,8 +125,9 @@ export default function Home() {
         </section>
 
         <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10 lg:px-8">
-          <div className="w-full flex justify-between p-4">
-            <h2 className="py-4 text-3xl font-bold uppercase text-center text-blue-600">
+          <div className="w-full flex justify-between items-center p-4">
+            <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
+              {" "}
               Our BOD
             </h2>
 
@@ -152,8 +151,9 @@ export default function Home() {
 
         {/* success stories  */}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-          <div className="w-full flex justify-between p-4">
-            <h2 className="py-4 text-3xl font-bold uppercase text-center text-blue-600">
+          <div className="w-full flex justify-between items-center p-4">
+            <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
+              {" "}
               Success Stories
             </h2>
 
@@ -178,8 +178,9 @@ export default function Home() {
 
         {/* Events  */}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-          <div className="w-full flex justify-between p-4">
-            <h2 className="py-4 text-3xl font-bold uppercase text-center text-blue-600">
+          <div className="w-full flex justify-between items-center p-4">
+            <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
+              {" "}
               Events
             </h2>
 

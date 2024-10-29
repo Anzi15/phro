@@ -1,14 +1,14 @@
-"use client"
-import React from 'react'
+"use client";
+import React from "react";
 import TeamCard from "../components/TeamCard";
-import successStoiresData from "../data/successStories.json"
-import SuccessStoryCard from '../components/SuccessStoryCard';
+import successStoiresData from "../data/successStories.json";
+import SuccessStoryCard from "../components/SuccessStoryCard";
 
 const page = () => {
   return (
     <section>
       <div>
-        <h2 className="py-12 text-5xl font-bold uppercase text-center text-blue-600">
+        <h2 className="py-4 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
           Success Stories
         </h2>
       </div>
@@ -27,6 +27,6 @@ const page = () => {
       </div>
     </section>
   );
-}
+};
 
-export default page
+export default page;
