@@ -42,3 +42,10 @@ body {
       color: #d6d6d6; 
   } 
 }
+
+.floating-whatsapp {
+  z-index: 1000; /* Make sure it is above other elements */
+  position: fixed; /* Ensure it's fixed on the screen */
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+}

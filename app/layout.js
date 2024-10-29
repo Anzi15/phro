@@ -1,10 +1,13 @@
-"use client"
+"use client";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import { usePathname } from "next/navigation";
-import { Main } from "next/document";
+import 'react-tooltip/dist/react-tooltip.css';
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,31 +20,39 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const hideHeaderFooter = pathname === '/checkout' || pathname.startsWith('/admin');
 
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {
           hideHeaderFooter ? (
             <div className="w-full max-w-screen">
               {children}
             </div>
-            
-          ) : 
-          (
+          ) : (
             <>
-            <Header/>
-            {children}
-            <Footer/>
+              <Header />
+              {children}
+              <Footer />
             </>
           )
         }
+        <FloatingWhatsApp   phoneNumber="+923360398419" accountName="PHRO" statusMessage="Online" chatMessage="Asalam o alekum, how can we help you?" avatar="/logo.svg" />
+        <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClicka
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+         /> {/* Moved ToastContainer here to ensure it renders on all pages */}
       </body>
     </html>
   );
