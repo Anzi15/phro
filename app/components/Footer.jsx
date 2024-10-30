@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import WhatsAppLeadForm from "./WhatsAppLeadForm.jsx";
-import { FaFacebookSquare, FaInstagramSquare, FaWhatsappSquare } from "react-icons/fa";
+import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaWhatsappSquare } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
 
 // Array for quick links and top collections
@@ -19,8 +19,8 @@ const LINKS = [
     title: "Sitemap",
     items: [
       { label: "Events", href: "/events" },
-      { label: "Meetings", href: "/meetings" },
-      { label: "Meet our Team", href: "/team" },
+      { label: "Success Stories", href: "/success-stories" },
+      { label: "Meet our Team", href: "/bods" },
       { label: "Contact Us", href: "/contact" },
     ],
   },
@@ -37,11 +37,11 @@ const SOCIAL_LINKS = [
     icon: <FaFacebookSquare className="text-4xl transition-all hover:scale-105" />,
   },
   {
-    href: "https://www.instagram.com/alzehrabygm",
-    icon: <FaInstagramSquare className="text-4xl transition-all hover:scale-105" />,
+    href: "https://x.com/PhroPakistan",
+    icon: <FaTwitterSquare className="text-4xl transition-all hover:scale-105" />,
   },
   {
-    href: "https://www.tiktok.com/@alzehrabygm",
+    href: "https://www.tiktok.com/@phro.org",
     icon: <AiFillTikTok className="text-[2.6rem] transition-all hover:scale-105" />,
   },
 ];

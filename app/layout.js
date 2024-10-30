@@ -36,11 +36,11 @@ export default function RootLayout({ children }) {
             <>
               <Header />
               {children}
+              <FloatingWhatsApp   phoneNumber="+923360398419" accountName="PHRO" statusMessage="Online" chatMessage="Asalam o alekum, how can we help you?" avatar="/logo.svg" />
               <Footer />
             </>
           )
         }
-        <FloatingWhatsApp   phoneNumber="+923360398419" accountName="PHRO" statusMessage="Online" chatMessage="Asalam o alekum, how can we help you?" avatar="/logo.svg" />
         <ToastContainer
         position="top-right"
         autoClose={2000}

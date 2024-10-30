@@ -12,7 +12,7 @@ const page = () => {
           Success Stories
         </h2>
       </div>
-      <div class="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+      <div className="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
         {successStoiresData.map((story, i) => {
           return (
             <SuccessStoryCard

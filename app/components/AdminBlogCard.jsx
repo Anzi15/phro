@@ -15,7 +15,7 @@ const AdminBlogCard = ({
   title="meow",
   image="https://media.tarkett-image.com/large/TH_25094225_25187225_001.jpg",
   loading,
-  onDeleteBlog=function(){},
+  onDeleteBlog = ()=>{},
 }) => {
   
   const deleteBlog = async (docId) => {
@@ -30,6 +30,7 @@ const AdminBlogCard = ({
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
+          console.log(docId)
           Swal.fire({
             title: "Deleting...",
             text: "Please wait while the blog post is being deleted.",
@@ -40,7 +41,7 @@ const AdminBlogCard = ({
             },
           });
 
-          const blogRef = doc(db, "Blogs", docId);
+          const blogRef = doc(db, "blogs", docId);
           const docSnapshot = await getDoc(blogRef);
 
           if (docSnapshot.exists()) {

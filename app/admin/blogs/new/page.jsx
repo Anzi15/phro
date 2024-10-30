@@ -45,7 +45,7 @@
       const checkForExistence = async () => {
         if (slug.length) {
           try {
-            const docRef = doc(db, "Blogs", slug);
+            const docRef = doc(db, "blogs", slug);
             const docSnap = await getDoc(docRef);
 
             setIsSlugAlreadyExisting(docSnap.exists());

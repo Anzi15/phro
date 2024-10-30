@@ -31,7 +31,7 @@ const page = () => {
           Our Components
         </h2>
       </div>
-      <div class="grid gird-cols-2 md:grid-cols-4 gap-12 max-w-xl mx-auto md:max-w-3xl lg:max-w-full p-4">
+      <div className="grid gird-cols-2 md:grid-cols-4 gap-12 max-w-xl mx-auto md:max-w-3xl lg:max-w-full p-4">
         {componentsData.map((initiative, i) => {
           const Icon = iconMapping[initiative.icon]; // Map the icon string to the component
           return (

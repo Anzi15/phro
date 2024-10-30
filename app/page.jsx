@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Carousel } from "@material-tailwind/react";
 import "react-icons";
-import BlogCard from "./components/BlogCard"
+import BlogCard from "./components/BlogCard";
 import Intro from "./components/Intro";
 import InitiativesCard from "./components/InitiativesCard";
 import { FaBowlFood, FaGraduationCap } from "react-icons/fa6";
@@ -44,7 +44,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchBlogs() {
-      const collectionRef = collection(db, 'blogs');
+      const collectionRef = collection(db, "blogs");
       const blogsArr = await getDocs(collectionRef, limit(2));
       const blogsData = [];
       blogsArr.forEach((blog) => {
@@ -54,7 +54,7 @@ export default function Home() {
       setLoading(false);
     }
 
-    fetchBlogs()
+    fetchBlogs();
   }, []);
 
   return (
@@ -129,7 +129,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10 lg:px-8">
           <div className="w-full flex justify-between items-center p-4">
             <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
               {" "}
@@ -140,7 +140,7 @@ export default function Home() {
               view all
             </Link>
           </div>
-          <div class="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+          <div className="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
             {bodData.slice(0, 4).map((member, i) => {
               return (
                 <TeamCard
@@ -155,7 +155,7 @@ export default function Home() {
         </div>
 
         {/* success stories  */}
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
           <div className="w-full flex justify-between items-center p-4">
             <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
               {" "}
@@ -166,7 +166,7 @@ export default function Home() {
               view all
             </Link>
           </div>
-          <div class="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+          <div className="grid gird-cols-2 md:grid-cols-4 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
             {successStoiresData.slice(0, 4).map((story, i) => {
               return (
                 <SuccessStoryCard
@@ -182,7 +182,7 @@ export default function Home() {
         </div>
 
         {/* Events  */}
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
           <div className="w-full flex justify-between items-center p-4">
             <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
               {" "}
@@ -206,9 +206,9 @@ export default function Home() {
             })}
           </div>
         </div>
-        
+
         {/* Blogs  */}
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
           <div className="w-full flex justify-between items-center p-4">
             <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
               {" "}
@@ -220,21 +220,21 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid gird-cols-1 md:grid-cols-2 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
-          {blogs.length > 0 ? (
-  blogs.map((blog, i) => (
-    <BlogCard
-      key={i}
-      title={blog.title}
-      coverImage={blog.coverImage}
-      link={`/blog/${blog.id}`}
-    />
-  ))
-) : (
-  <>
-    <BlogCard loading={true} />
-    <BlogCard loading={true} />
-  </>
-)}
+            {blogs.length > 0 ? (
+              blogs.map((blog, i) => (
+                <BlogCard
+                  key={i}
+                  title={blog.title}
+                  coverImage={blog.coverImage}
+                  link={`/blog/${blog.id}`}
+                />
+              ))
+            ) : (
+              <>
+                <BlogCard loading={true} />
+                <BlogCard loading={true} />
+              </>
+            )}
           </div>
         </div>
       </main>
