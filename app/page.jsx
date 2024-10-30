@@ -219,23 +219,24 @@ export default function Home() {
               view all
             </Link>
           </div>
-          <div className="grid gird-cols-1 md:grid-cols-2 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
-            {blogs.length > 0 ? (
-              blogs.map((blog, i) => (
-                <BlogCard
-                  key={i}
-                  title={blog.title}
-                  coverImage={blog.coverImage}
-                  link={`/blog/${blog.id}`}
-                />
-              ))
-            ) : (
-              <>
-                <BlogCard loading={true} />
-                <BlogCard loading={true} />
-              </>
-            )}
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-xl mx-auto md:max-w-3xl lg:max-w-full">
+  {loading ? (
+    <>
+      <BlogCard loading={true} />
+      <BlogCard loading={true} />
+    </>
+  ) : (
+    blogs.map((blog, i) => (
+      <BlogCard
+        key={i}
+        title={blog.title}
+        coverImage={blog.coverImage}
+        link={`/blog/${blog.id}`}
+      />
+    ))
+  )}
+</div>
+
         </div>
       </main>
     </>

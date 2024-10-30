@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { orderBy, startAfter, collection, query, limit, getDocs } from 'firebase/firestore';
-import { db } from "../../lib/firebase/config";
+import {db} from "../../lib/firebase/config"
 import AdminRequestsCard from "../../components/AdminRequestsCard.jsx";
 
 const AdminRequestsPage = () => {
