@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 
 export default function FAQs() {
@@ -64,23 +65,24 @@ export default function FAQs() {
                     {faq.question}
                   </p>
                   <div className="ml-6 flex h-6 w-7 self-start md:w-6">
-                    <svg
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`transition-transform duration-500 ${openFaqIndex === index ? "rotate-180" : ""}`}
-                    >
-                      <path
-                        d="M16 12l-8 8 8 8"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`transition-transform ${openFaqIndex === index ? "rotate-360" : "rotate-180"}`}
+  >
+    <path
+      d="M12 20l8-8 8 8"  // Adjusted path to create an upward-pointing arrow
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</div>
+
                 </div>
                 {openFaqIndex === index && (
                   <div className="px-4 sm:px-8 py-4">

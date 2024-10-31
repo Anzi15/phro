@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import Link from 'next/link';
+import FAQs from "../components/Faqs";
 // import CustomerBenefits from '../components'
 // import TestimonialSlider from '../components/testimonials-slider'
 // import FaqsSection from '../components/FaqsSection'
@@ -210,7 +211,7 @@ const page = () => {
         </div>
       </div>
     </section>
-
+    <FAQs />
   </main>
   )
 }
