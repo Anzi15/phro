@@ -1,11 +1,11 @@
 import React from 'react';
 
-const RequestDetailsModal = ({ requestDetails, onClose }) => {
-  if (!requestDetails) return null;
+const AdminInboxModel = ({ inboxDetails, onClose }) => {
+  if (!inboxDetails) return null;
 
   return (
     <div
-      id="requestDetailsModal"
+      id="inboxDetailsModal"
       tabIndex="-1"
       aria-hidden="true"
       className="fixed top-0 right-0 left-0 z-50 flex md:items-center justify-center items-start w-full h-full overflow-y-scroll overflow-x-hidden bg-gray-800 bg-opacity-50"
@@ -14,7 +14,7 @@ const RequestDetailsModal = ({ requestDetails, onClose }) => {
         {/* Modal header */}
         <div className="flex justify-between items-center pb-4 mb-4 rounded-t brequest-b dark:brequest-gray-600">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Request #{requestDetails.id}
+            Request #{inboxDetails.id}
           </h3>
           <button
             type="button"
@@ -49,7 +49,7 @@ const RequestDetailsModal = ({ requestDetails, onClose }) => {
                         <h4 className='font-semibold '>
                             Date:
                         </h4>
-                        <p>{requestDetails.createdAt}</p>
+                        <p>{inboxDetails.createdAt}</p>
                     </div>
                 </div>
 
@@ -61,31 +61,19 @@ const RequestDetailsModal = ({ requestDetails, onClose }) => {
                         <h4 className='font-semibold '>
                             Full Name:
                         </h4>
-                        <p>{requestDetails.fullName}</p>
+                        <p>{inboxDetails.name}</p>
                     </div>
                     <div className='flex pb-3 items-center gap-3'>
                         <h4 className='font-semibold '>
-                        CNIC Number:
+                        Whatsapp Number:
                         </h4>
-                        <p>{requestDetails.cnic}</p>
+                        <p>{inboxDetails.whatsappNumber}</p>
                     </div>
                     <div className='flex pb-3 items-center gap-3'>
                         <h4 className='font-semibold '>
-                            Email:
+                            Message:
                         </h4>
-                        <p>{requestDetails.email}</p>
-                    </div>
-                    <div className='flex pb-3 items-center gap-3'>
-                        <h4 className='font-semibold '>
-                            Phone:
-                        </h4>
-                        <p>{requestDetails.whatsappNumber}</p>
-                    </div>
-                    <div className='flex pb-3 items-center gap-3'>
-                        <h4 className='font-semibold '>
-                            Qualification:
-                        </h4>
-                        <p>{requestDetails.qualification}</p>
+                        <p>{inboxDetails.message}</p>
                     </div>
                 </div>
 
@@ -96,4 +84,4 @@ const RequestDetailsModal = ({ requestDetails, onClose }) => {
   );
 };
 
-export default RequestDetailsModal;
+export default AdminInboxModel;

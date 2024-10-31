@@ -1,14 +1,24 @@
 import { orderBy, startAfter, collection, query, limit, getDocs } from 'firebase/firestore';
 import {db} from "../../lib/firebase/config"
-import AdminRequestsCard from "../../components/AdminRequestsCard.jsx";
-
+import AdminInboxCard from "../../components/AdminInboxCard"
 const AdminRequestsPage = async() => {
-  const allRequestDocs = await getDocs(collection(db, "volunteer-requests"));
-  const requests = [];
+  const allInboxDocs = await getDocs(collection(db, "msgs"));
+  const msgs = [];
 
-  allRequestDocs.forEach((request)=>{
-    requests.push({...request.data(), id:request.id})
-  })
+  allInboxDocs.forEach((request) => {
+    const data = request.data();
+    const createdAt = data.createdAt ? data.createdAt.toDate() : null;
+  
+    // Format createdAt to DD/MM/YYYY
+    const formattedDate = createdAt
+      ? `${createdAt.getDate().toString().padStart(2, '0')}/${
+          (createdAt.getMonth() + 1).toString().padStart(2, '0')
+        }/${createdAt.getFullYear()}`
+      : null;
+  
+    msgs.push({ ...data, id: request.id, createdAt: formattedDate });
+  });
+  console.log(msgs)
   // {
   //   volunteerDetails: {
   //     firstName: 'Anzi',
@@ -23,7 +33,7 @@ const AdminRequestsPage = async() => {
   // }
   return (
     <main className="my-8">
-      <h1 className="text-5xl text-left px-6">Requests</h1>
+      <h1 className="text-5xl text-left px-6">Inbox</h1>
 
       <section className="my-8 md:w-[80vw]">
         <div className="overflow-x-auto">
@@ -31,23 +41,21 @@ const AdminRequestsPage = async() => {
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="p-4">Name</th>
-                <th scope="col" className="px-4 py-3">City</th>
-                <th scope="col" className="px-4 py-3">Phone</th>
+                <th scope="col" className="px-4 py-3">Whatsapp number</th>
                 <th scope="col" className="px-4 py-3">Dated</th>
               </tr>
             </thead>
             <tbody>
               {
-                requests.map((request) => {
+                msgs.map((request) => {
                   return (
-                    <AdminRequestsCard
+                    <AdminInboxCard
                       key={request.id}
                       isLoading={false}
-                      volunteerName={request.fullName}
-                      volunteerPhone={request.whatsappNumber}
-                      requestsDate={request.createdAt}
-                      volunteerCity={request.city}
-                      requestDetailsObj={request}
+                      name={request.name}
+                      whatsappNumber={request.whatsappNumber}
+                      date={request.createdAt}
+                      inboxDetailsObj={request}
                     />
                   );
                 })

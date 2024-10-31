@@ -25,20 +25,29 @@ const page = ({params}) => {
   });
   console.log(componentData);
   
-    // const iconMapping = {
-    //   FaBalanceScale: FaBalanceScale,
-    //   FaHandHoldingHeart: FaHandHoldingHeart,
-    //   FaChild: FaChild,
-    //   FaBook: FaBook,
-    //   FaLeaf: FaLeaf,
-    //   FaVenusMars: FaVenusMars,
-    //   FaTools: FaTools,
-    // };
-    // const Icon = iconMapping[componentData.icon]
+    const iconMapping = {
+      FaBalanceScale: FaBalanceScale,
+      FaHandHoldingHeart: FaHandHoldingHeart,
+      FaChild: FaChild,
+      FaBook: FaBook,
+      FaLeaf: FaLeaf,
+      FaVenusMars: FaVenusMars,
+      FaTools: FaTools,
+    };
+    const Icon = iconMapping[componentData.icon]
   return (
-    <div>
-   {/* {Icon && <Icon className="text-5xl text-blue-500" />} Render the icon component directly */}
-    </div>
+    <section className="flex min-h-screen flex-col justify-center items-center justify-center">
+<div className="py-12 w-full relative">
+  {
+    Icon && <Icon />
+  }
+</div>
+
+
+      <div className='p-6 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert w-full' dangerouslySetInnerHTML={{__html:componentData.description}}>
+        
+      </div>
+    </section>
   )
 }
 

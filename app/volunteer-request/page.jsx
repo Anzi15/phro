@@ -13,6 +13,7 @@ const Page = () => {
   const [email, setEmail] = useState("");
   const [cnic, setCnic] = useState("");
   const [whatsappNumber, setWhatsappNumber] = useState("");
+  const [city, setCity] = useState("");
   const [qualification, setQualification] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -70,7 +71,10 @@ const Page = () => {
     } else if (!email.includes("@")) {
       toast.error("Please enter a valid email address");
       setLoading(false);
-    } else {
+    } else if (city.length <= 0){
+      toast.error("Please enter your city name");
+      setLoading(false);
+    }else {
       try {
         const createdAt = new Date();
         const formattedDate = `${createdAt.getDate()}/${createdAt.getMonth() + 1}/${createdAt.getFullYear()}`;
@@ -82,6 +86,7 @@ const Page = () => {
           whatsappNumber,
           qualification,
           createdAt: formattedDate,
+          city
         };
 
         const msgCollection = collection(db, "volunteer-requests");
@@ -159,6 +164,15 @@ const Page = () => {
             inputValue={whatsappNumber}
             errorMsg={error}
             inputName="Your WhatsApp Number"
+            requiredInput={true}
+          />
+          <InputField
+            inputType="text"
+            valueReturner={setCity}
+            inputAutoComplete={"city"}
+            inputValue={city}
+            errorMsg={error}
+            inputName="Your city"
             requiredInput={true}
           />
           <select
