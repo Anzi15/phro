@@ -9,18 +9,7 @@ const AdminRequestsPage = async() => {
   allRequestDocs.forEach((request)=>{
     requests.push({...request.data(), id:request.id})
   })
-  // {
-  //   volunteerDetails: {
-  //     firstName: 'Anzi',
-  //     email: 'djam4343@gmail.com',
-  //     lastName: 'meow',
-  //     city: 'sukkur',
-  //     phoneNumber: '03248226367'
-  //   },
-  //   date: '10/28/2024',
-  //   createdAt: Timestamp { seconds: 1729018800, nanoseconds: 246000000 },
-  //   id: 'aweXq7qTQdDScyfqntDT'
-  // }
+
   return (
     <main className="my-8">
       <h1 className="text-5xl text-left px-6">Requests</h1>

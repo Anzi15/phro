@@ -5,8 +5,6 @@ import "react-icons";
 import BlogCard from "./components/BlogCard";
 import Intro from "./components/Intro";
 import InitiativesCard from "./components/InitiativesCard";
-import { FaBowlFood, FaGraduationCap } from "react-icons/fa6";
-import { FaHandsHelping, FaTint } from "react-icons/fa";
 import { collection, getDocs, limit } from "firebase/firestore";
 import Link from "next/link";
 import { db } from "./lib/firebase/config";

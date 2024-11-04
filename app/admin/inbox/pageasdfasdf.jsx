@@ -52,7 +52,7 @@ const AdminRequestsPage = async() => {
                     <AdminInboxCard
                       key={request.id}
                       isLoading={false}
-                      name={request.name}
+                      name={request?.name}
                       whatsappNumber={request.whatsappNumber}
                       date={request.createdAt}
                       inboxDetailsObj={request}
