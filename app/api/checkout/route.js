@@ -6,7 +6,7 @@ export async function POST(req) {
   try {
     const { amount } = await req.json(); // Get amount from frontend
 
-    if (!amount || amount < 50) {
+    if (!amount || amount < 1) {
       return new Response(JSON.stringify({ error: "Invalid amount" }), { status: 400 });
     }
 
