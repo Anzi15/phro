@@ -80,7 +80,7 @@ export default function DonationPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
         {/* Impact Section */}
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Impact</h2>
