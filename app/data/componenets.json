@@ -1,0 +1,37 @@
+[
+    {
+      "title": "Human Rights Protection",
+      "description": "Advocating for and safeguarding human rights to promote justice and equality in society.",
+      "icon": "FaBalanceScale"
+    },
+    {
+      "title": "Gender-Based Violence (GBV) Prevention",
+      "description": "Providing support and awareness programs to prevent gender-based violence and protect affected individuals.",
+      "icon": "FaHandHoldingHeart"
+    },
+    {
+      "title": "Child Protection",
+      "description": "Ensuring the safety, well-being, and rights of children through advocacy, support, and protective measures.",
+      "icon": "FaChild"
+    },
+    {
+      "title": "Education",
+      "description": "Promoting education accessibility and quality to empower communities and support lifelong learning.",
+      "icon": "FaBook"
+    },
+    {
+      "title": "Climate Change Resilience",
+      "description": "Building resilient communities by addressing climate change impacts and promoting sustainable practices.",
+      "icon": "FaLeaf"
+    },
+    {
+      "title": "Gender Equality",
+      "description": "Advocating for equal opportunities, rights, and representation for all genders to create an inclusive society.",
+      "icon": "FaVenusMars"
+    },
+    {
+      "title": "Skill Development for Youth",
+      "description": "Empowering young people with essential skills to enhance employability and foster economic independence.",
+      "icon": "FaTools"
+    }
+  ]
