@@ -419,11 +419,12 @@ export default function DonationPage() {
                           )}
                         </button>
                       </div>
+                      </div>
 
                                           <div>
                       <p className="text-sm text-gray-500 mb-1">Bank Country:</p>
                       <div className="flex items-center justify-between bg-white p-3 rounded border border-gray-200">
-                        <code className="font-mono text-sm md:text-base">United Kingdom</code>
+                        <code className="font-mono text-sm md:text-base">United States</code>
                         <button
                           onClick={copyToClipboard}
                           className="ml-4 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -474,7 +475,26 @@ export default function DonationPage() {
                   </div>
                   <div className="mt-6 bg-blue-50 p-4 rounded-md border border-blue-100">
                     <p className="text-sm text-blue-800">
-                      Please include your name and "Donation" in the payment reference.
+                      Bank name:
+Citibank
+
+Bank address:
+111 Wall Street New York, NY 10043 USA
+
+Routing (ABA):
+031100209
+
+SWIFT code:
+CITIUS33
+
+Account number:
+70589630001301816
+
+Account type:
+CHECKING
+
+COUNTRY:
+United States
                     </p>
                   </div>
                 </div>
