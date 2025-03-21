@@ -17,6 +17,12 @@ export default function DonationPage() {
 
   const iban = "PK66NAYA1234503360398419"
   const donationAmounts = [100, 500, 1000, 5000]
+  const payoneerDetails = {
+    accountNumber: 14928581,
+    BankName: "Barclays",
+    BeneficiaryName: "PHRO LTD",
+    SortCode: 231486,
+  }
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(iban)
@@ -201,85 +207,234 @@ export default function DonationPage() {
 
             {/* International Tab Content */}
             {activeTab === "international" && (
+              // <div className="space-y-6">
+              //   <h3 className="text-lg font-medium text-gray-900 mb-4">Choose Donation Amount</h3>
+
+              //   <div className="grid grid-cols-2 gap-4">
+              //     {donationAmounts.map((amount) => (
+              //       <button
+              //         key={amount}
+              //         onClick={() => handleAmountSelect(amount)}
+              //         className={`h-16 text-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+              //           selectedAmount === amount
+              //             ? "bg-blue-600 text-white"
+              //             : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
+              //         }`}
+              //       >
+              //         ${amount}
+              //       </button>
+              //     ))}
+              //   </div>
+
+              //   <div className="mt-6">
+              //     <label htmlFor="custom-amount" className="block text-sm font-medium text-gray-700 mb-2">
+              //       Custom Amount
+              //     </label>
+              //     <div className="mt-1 relative rounded-md shadow-sm">
+              //       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              //         <span className="text-gray-500 sm:text-sm">$</span>
+              //       </div>
+              //       <input
+              //         type="number"
+              //         name="custom-amount"
+              //         id="custom-amount"
+              //         className="focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+              //         placeholder="0.00"
+              //         value={customAmount}
+              //         onChange={(e) => {
+              //           setCustomAmount(e.target.value)
+              //           setSelectedAmount(null)
+              //         }}
+              //       />
+              //     </div>
+              //   </div>
+
+              //   <button
+              //     onClick={() => handleDonationClick(customAmount || selectedAmount || 0)}
+              //     disabled={isProcessing || (!customAmount && selectedAmount === null)}
+              //     className={`w-full py-3 px-4 rounded-md shadow-sm text-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+              //       isProcessing || (!customAmount && selectedAmount === null)
+              //         ? "bg-blue-300 cursor-not-allowed"
+              //         : "bg-blue-600 hover:bg-blue-700"
+              //     }`}
+              //   >
+              //     {isProcessing ? (
+              //       <div className="flex items-center justify-center">
+              //         <svg
+              //           className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+              //           xmlns="http://www.w3.org/2000/svg"
+              //           fill="none"
+              //           viewBox="0 0 24 24"
+              //         >
+              //           <circle
+              //             className="opacity-25"
+              //             cx="12"
+              //             cy="12"
+              //             r="10"
+              //             stroke="currentColor"
+              //             strokeWidth="4"
+              //           ></circle>
+              //           <path
+              //             className="opacity-75"
+              //             fill="currentColor"
+              //             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              //           ></path>
+              //         </svg>
+              //         Processing...
+              //       </div>
+              //     ) : (
+              //       `Donate ${selectedAmount ? `$${selectedAmount}` : customAmount ? `$${customAmount}` : ""}`
+              //     )}
+              //   </button>
+              // </div>
               <div className="space-y-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-4">Choose Donation Amount</h3>
-
-                <div className="grid grid-cols-2 gap-4">
-                  {donationAmounts.map((amount) => (
-                    <button
-                      key={amount}
-                      onClick={() => handleAmountSelect(amount)}
-                      className={`h-16 text-lg font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
-                        selectedAmount === amount
-                          ? "bg-blue-600 text-white"
-                          : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
-                      }`}
-                    >
-                      ${amount}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="mt-6">
-                  <label htmlFor="custom-amount" className="block text-sm font-medium text-gray-700 mb-2">
-                    Custom Amount
-                  </label>
-                  <div className="mt-1 relative rounded-md shadow-sm">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <span className="text-gray-500 sm:text-sm">$</span>
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-medium text-gray-900 mb-4">Bank Transfer Details</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Account number:</p>
+                      <div className="flex items-center justify-between bg-white p-3 rounded border border-gray-200">
+                        <code className="font-mono text-sm md:text-base">{payoneerDetails.accountNumber}</code>
+                        <button
+                          onClick={copyToClipboard}
+                          className="ml-4 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        >
+                          {copied ? (
+                            <>
+                              <svg
+                                className="h-4 w-4 mr-1.5 text-green-500"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              Copied
+                            </>
+                          ) : (
+                            <>
+                              <svg
+                                className="h-4 w-4 mr-1.5"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                                />
+                              </svg>
+                              Copy
+                            </>
+                          )}
+                        </button>
+                      </div>
                     </div>
-                    <input
-                      type="number"
-                      name="custom-amount"
-                      id="custom-amount"
-                      className="focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
-                      placeholder="0.00"
-                      value={customAmount}
-                      onChange={(e) => {
-                        setCustomAmount(e.target.value)
-                        setSelectedAmount(null)
-                      }}
-                    />
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Sort Code:</p>
+                      <div className="flex items-center justify-between bg-white p-3 rounded border border-gray-200">
+                        <code className="font-mono text-sm md:text-base">{payoneerDetails.SortCode}</code>
+                        <button
+                          onClick={copyToClipboard}
+                          className="ml-4 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        >
+                          {copied ? (
+                            <>
+                              <svg
+                                className="h-4 w-4 mr-1.5 text-green-500"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              Copied
+                            </>
+                          ) : (
+                            <>
+                              <svg
+                                className="h-4 w-4 mr-1.5"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                                />
+                              </svg>
+                              Copy
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Bank Name:</p>
+                      <div className="flex items-center justify-between bg-white p-3 rounded border border-gray-200">
+                        <code className="font-mono text-sm md:text-base">{payoneerDetails.BankName}</code>
+                        <button
+                          onClick={copyToClipboard}
+                          className="ml-4 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        >
+                          {copied ? (
+                            <>
+                              <svg
+                                className="h-4 w-4 mr-1.5 text-green-500"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              Copied
+                            </>
+                          ) : (
+                            <>
+                              <svg
+                                className="h-4 w-4 mr-1.5"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                                />
+                              </svg>
+                              Copy
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                    {/* <div>
+                      <p className="text-sm text-gray-500 mb-1">Bank</p>
+                      <p className="font-medium">PHRO International Bank</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">Beneficiary</p>
+                      <p className="font-medium">PHRO Foundation</p>
+                    </div> */}
+                  </div>
+                  <div className="mt-6 bg-blue-50 p-4 rounded-md border border-blue-100">
+                    <p className="text-sm text-blue-800">
+                      Please include your name and "Donation" in the payment reference.
+                    </p>
                   </div>
                 </div>
-
-                <button
-                  onClick={() => handleDonationClick(customAmount || selectedAmount || 0)}
-                  disabled={isProcessing || (!customAmount && selectedAmount === null)}
-                  className={`w-full py-3 px-4 rounded-md shadow-sm text-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
-                    isProcessing || (!customAmount && selectedAmount === null)
-                      ? "bg-blue-300 cursor-not-allowed"
-                      : "bg-blue-600 hover:bg-blue-700"
-                  }`}
-                >
-                  {isProcessing ? (
-                    <div className="flex items-center justify-center">
-                      <svg
-                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
-                      Processing...
-                    </div>
-                  ) : (
-                    `Donate ${selectedAmount ? `$${selectedAmount}` : customAmount ? `$${customAmount}` : ""}`
-                  )}
-                </button>
               </div>
             )}
           </div>
