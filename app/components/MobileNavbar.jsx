@@ -13,8 +13,8 @@ function MobileNavbar({ links, isMobileOpen, onClick }) {
     >
       <header className="flex items-center justify-between">
         <Image
-          src="/logo.svg"
-          alt="Al Zehra Perfumes"
+          src="/logo phro.jpg"
+          alt="PHRO"
           width={60}
           height={60}
           draggable={false}
@@ -33,6 +33,8 @@ function MobileNavbar({ links, isMobileOpen, onClick }) {
           </svg>
         </button>
       </header>
+
+            <Link className="p-3 px-4 rounded-full bg-blue-700 text-white font-bold hover:bg-blue-900 transition-all flex-nowrap text-nowrap  text-center" href="/donate">Donate now</Link>
       <div className="flex flex-col gap-4 py-6 justify-start">
         {links.map((link) => {
           return (
