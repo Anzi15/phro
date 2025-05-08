@@ -1,48 +1,42 @@
 [
-    {
-      "title": "Women Empowerment Workshop",
-      "imageSrc": "https://loremflickr.com/320/240/",
-      "description": "<h2>Overview of the Flood Situation<\/h2>\r\n        <p>The recent heavy monsoon rains have caused devastating floods across several regions in Pakistan. Major rivers have overflowed, submerging towns and villages, displacing millions of people, and causing significant damage to infrastructure.<\/p>\r\n        \r\n        <h3>Impact on Communities<\/h3>\r\n        <p>The floods have severely impacted rural and urban areas alike. Many families have lost their homes, and access to clean drinking water and food supplies has become a critical issue. Emergency services are overwhelmed, and rescue efforts are ongoing in the worst-hit regions.<\/p>\r\n        \r\n        <h3>Government and International Aid<\/h3>\r\n        <p>The government of Pakistan has declared a national emergency and is coordinating with international aid organizations to provide relief. Supplies such as food, medicine, and temporary shelters are being distributed to affected areas. Several neighboring countries and global organizations have pledged support to help Pakistan recover from this disaster.<\/p>\r\n        \r\n        <blockquote>\r\n          \"The scale of the flooding is unprecedented, and the recovery will take months, if not years.\" - National Disaster Management Authority (NDMA)\r\n        <\/blockquote>\r\n    \r\n        <h3>Climate Change and Future Challenges<\/h3>\r\n        <p>Many experts believe that climate change has played a significant role in the intensity of these monsoon rains. The flooding in Pakistan serves as a stark reminder of the environmental challenges the country faces. Long-term strategies will be needed to improve flood defenses, infrastructure, and disaster preparedness.<\/p>\r\n    \r\n        <h3>How You Can Help<\/h3>\r\n        <p>If you are looking to assist in the relief efforts, there are several ways to contribute. Many local and international NGOs are accepting donations to support flood victims. Monetary donations, food supplies, and volunteer services are all in high demand during this crisis.<\/p>\r\n    \r\n        <h4>Conclusion<\/h4>\r\n        <p>The heavy flooding in Pakistan has highlighted the country's vulnerability to natural disasters. Immediate relief efforts are essential, but long-term planning will be required to mitigate the effects of future floods. Stay informed and consider how you can support those affected by this catastrophe.<\/p>\r\n      ",
-      "date": "2023-08-15",
-      "location": "Lahore, Pakistan",
-      "category": "Awareness",
-      "slug": "women-empowerment-workshop"
-    },
-    {
-      "title": "Health Camp for Rural Communities",
-      "imageSrc": "https://loremflickr.com/320/240/healthcare",
-      "description": "<h2>Overview of the Flood Situation<\/h2>\r\n        <p>The recent heavy monsoon rains have caused devastating floods across several regions in Pakistan. Major rivers have overflowed, submerging towns and villages, displacing millions of people, and causing significant damage to infrastructure.<\/p>\r\n        \r\n        <h3>Impact on Communities<\/h3>\r\n        <p>The floods have severely impacted rural and urban areas alike. Many families have lost their homes, and access to clean drinking water and food supplies has become a critical issue. Emergency services are overwhelmed, and rescue efforts are ongoing in the worst-hit regions.<\/p>\r\n        \r\n        <h3>Government and International Aid<\/h3>\r\n        <p>The government of Pakistan has declared a national emergency and is coordinating with international aid organizations to provide relief. Supplies such as food, medicine, and temporary shelters are being distributed to affected areas. Several neighboring countries and global organizations have pledged support to help Pakistan recover from this disaster.<\/p>\r\n        \r\n        <blockquote>\r\n          \"The scale of the flooding is unprecedented, and the recovery will take months, if not years.\" - National Disaster Management Authority (NDMA)\r\n        <\/blockquote>\r\n    \r\n        <h3>Climate Change and Future Challenges<\/h3>\r\n        <p>Many experts believe that climate change has played a significant role in the intensity of these monsoon rains. The flooding in Pakistan serves as a stark reminder of the environmental challenges the country faces. Long-term strategies will be needed to improve flood defenses, infrastructure, and disaster preparedness.<\/p>\r\n    \r\n        <h3>How You Can Help<\/h3>\r\n        <p>If you are looking to assist in the relief efforts, there are several ways to contribute. Many local and international NGOs are accepting donations to support flood victims. Monetary donations, food supplies, and volunteer services are all in high demand during this crisis.<\/p>\r\n    \r\n        <h4>Conclusion<\/h4>\r\n        <p>The heavy flooding in Pakistan has highlighted the country's vulnerability to natural disasters. Immediate relief efforts are essential, but long-term planning will be required to mitigate the effects of future floods. Stay informed and consider how you can support those affected by this catastrophe.<\/p>\r\n      ",
-      "date": "2024-01-10",
-      "location": "Tharparkar, Pakistan",
-      "category": "Health",
-      "slug": "health-camp-for-rural-communities"
-    },
-    {
-      "title": "Education for All: School Supplies Drive",
-      "imageSrc": "https://loremflickr.com/320/240/education",
-      "description": "<p>PHRO successfully organized a drive to collect and distribute <strong>school supplies</strong> for children in remote areas. <br>The goal was to ensure that every child has the tools to succeed in education.</p><img src='https://loremflickr.com/400/300/school' alt='Education for All Drive' />",
-      "date": "2023-09-05",
-      "location": "Islamabad, Pakistan",
-      "category": "Fundraising",
-      "slug": "education-for-all-school-supplies-drive"
-    },
-    {
-      "title": "Human Rights Awareness Walk",
-      "imageSrc": "https://loremflickr.com/320/240/protest",
-      "description": "<p>The <strong>Human Rights Awareness Walk</strong> aimed at raising awareness about human rights issues affecting marginalized communities. <br>Participants held banners and gave speeches advocating for equal rights for all.</p><img src='https://loremflickr.com/400/300/protest' alt='Human Rights Walk' />",
-      "date": "2023-12-01",
-      "location": "Karachi, Pakistan",
-      "category": "Awareness",
-      "slug": "human-rights-awareness-walk"
-    },
-    {
-      "title": "Disaster Relief Fundraiser",
-      "imageSrc": "https://loremflickr.com/320/240/relief",
-      "description": "<p>In response to recent floods, PHRO organized a <strong>disaster relief fundraiser</strong> to provide essential supplies, shelter, and medical aid to those affected.</p><img src='https://loremflickr.com/400/300/aid' alt='Disaster Relief Fundraiser' />",
-      "date": "2024-02-20",
-      "location": "Multan, Pakistan",
-      "category": "Fundraising",
-      "slug": "disaster-relief-fundraiser"
-    }
+  {
+    "title": "Measles Vaccination & Awareness Camp",
+    "imageSrc": "https://i.ibb.co/LX9RH32X/image.png",
+    "description": "<h2>Emergency Response to Measles Outbreak</h2><p>PHRO organized a medical camp in Bhatti Muhalla (UC Rahooja) after a measles outbreak claimed 4 lives. With DHO support, 150 children were vaccinated and 400 screened. The team debunked myths like 'hanging onions prevents measles' through community sessions.</p><h3>Key Actions</h3><ul><li>Blood samples collected for diagnosis</li><li>Vitamin A distributed to affected children</li><li>LHW teams mobilized for follow-up</li></ul><blockquote>\"PHRO's swift action saved lives. We need sustained efforts to prevent future outbreaks.\" — District Health Officer, Sukkur</blockquote>",
+    "date": "2024-05-08",
+    "location": "Bhatti Muhalla, Taluka New Sukkur",
+    "category": "Health Crisis",
+    "slug": "measles-camp-2024",
+    "source": "Measles Outbreak Report, Pages 2–5, 8"
+  },
+  {
+    "title": "16 Days of Activism Against GBV",
+    "imageSrc": "https://i.ibb.co/PZbvdTMG/image.png",
+    "description": "<h2>Ending Gender-Based Violence in Sindh</h2><p>PHRO led a campaign across Sukkur and Ghotki, conducting sessions on women's rights, legal aid, and harmful practices like honor killings. Activities included signature campaigns, puppet shows, and forums with 2,000+ participants.</p><h3>Highlights</h3><ul><li>Linkages created with Women Protection Cells</li><li>Open discussions with religious minorities</li><li>Street theater on early marriage risks</li></ul><blockquote>\"Now I know how to report violence.\" — Female participant, UC Long Bhatti</blockquote>",
+    "date": "2022-11-25",
+    "location": "District Sukkur & Ghotki",
+    "category": "Advocacy",
+    "slug": "gbv-activism-2022",
+    "source": "PHRO Short Profile, Pages 25–27, 29"
+  },
+  {
+    "title": "Flood Relief Medical Camps",
+    "imageSrc": "https://i.ibb.co/ttR5gYL/image.png",
+    "description": "<h2>Emergency Healthcare for Flood Victims</h2><p>PHRO set up 20 mobile clinics serving 25,250 flood-affected individuals in Sukkur and Khairpur. Services included treatment for waterborne diseases, maternal care, and malnutrition screening.</p><h3>Impact</h3><ul><li>5 LHWs and 1 vaccinator per camp</li><li>Ambulance services for critical cases</li><li>Collaboration with IOM/USAID for winter kits</li></ul><blockquote>\"These camps were our only healthcare access for months.\" — Beneficiary, Thari Mirwah</blockquote>",
+    "date": "2022-08-20",
+    "location": "Districts Sukkur, Khairpur, Ghotki",
+    "category": "Disaster Relief",
+    "slug": "flood-medical-camps-2022",
+    "source": "PHRO Short Profile, Pages 10–13, 33"
+  },
+  {
+    "title": "Puppet Shows for Child Abuse Awareness",
+    "imageSrc": "https://i.ibb.co/1G7cJwvD/image.png",
+    "description": "<h2>Protecting Children Through Creative Education</h2><p>PHRO partnered with Sahil Organization to deliver interactive puppet shows in Sukkur schools, teaching children to recognize and report abuse. Key messages included 'Say no to unsafe touches' and 'Never keep secrets about harm.'</p><h3>Outcomes</h3><ul><li>1,200+ children educated</li><li>Teachers trained as first responders</li><li>UNICEF IEC materials distributed</li></ul><blockquote>\"My child now tells me everything—thanks to PHRO's puppets!\" — Parent, Rohri</blockquote>",
+    "date": "2021-11-22",
+    "location": "Taluka Rohri & Sukkur",
+    "category": "Child Protection",
+    "slug": "child-puppet-shows-2021",
+    "source": "PHRO Short Profile, Pages 20–21"
+  }
 ]
-  

@@ -131,7 +131,7 @@ export default function Home() {
           <div className="w-full flex justify-between items-center p-4">
             <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
               {" "}
-              Our BOD
+              Our Board of Directors
             </h2>
 
             <Link href="/bods" className="underline">
@@ -170,7 +170,7 @@ export default function Home() {
                 <SuccessStoryCard
                   key={i}
                   title={story.title}
-                  image={story.image}
+                  imgSrc={story.image}
                   description={story.content.slice(0, 50) + "..."}
                   link={`/success-stories/${story.slug}`}
                 />
@@ -206,7 +206,7 @@ export default function Home() {
         </div>
 
         {/* Blogs  */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        {/* <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
           <div className="w-full flex justify-between items-center p-4">
             <h2 className="py-12 md:text-3xl text-2xl font-bold uppercase text-center text-blue-600">
               {" "}
@@ -235,7 +235,7 @@ export default function Home() {
   )}
 </div>
 
-        </div>
+        </div> */}
       </main>
     </>
   );

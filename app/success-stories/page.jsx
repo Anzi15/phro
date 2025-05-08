@@ -18,7 +18,7 @@ const page = () => {
             <SuccessStoryCard
               key={i}
               title={story.title}
-              image={story.image}
+              imgSrc={story.image}
               description={story.content.slice(0, 50) + "..."}
               link={`/success-stories/${story.slug}`}
             />

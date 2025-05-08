@@ -10,13 +10,13 @@ const page = () => {
         </h2>
       </div>
       <div className="grid gird-cols-1 md:grid-cols-2 gap-8 ma p-4">
-        {eventsData?.slice(0, 4)?.map((event, i) => {
+        {eventsData?.map((event, i) => {
           return (
             <EventCard
               key={i}
               title={event?.title}
               imageSrc={event?.imageSrc}
-              link={`/event/${event.slug}`}
+              link={`/events/${event.slug}`}
             />
           );
         })}

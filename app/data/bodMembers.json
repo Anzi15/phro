@@ -1,50 +1,22 @@
 [
     {
-        "name": "Samreen",
-        "role": "CEO",
-        "profile": "https://i.ibb.co/9pYxbhK/Whats-App-Image-2024-11-02-at-21-18-35-d5b5a2b4.jpg",
+        "name": "Samreen Najeeb",
+        "role": "General Secretary",
         "about": "Samreen is the visionary leader and driving force behind our company. With years of experience in strategic planning and business development, she has guided the team to new heights with her innovative approach and passion for excellence. Under her leadership, the company has grown exponentially, expanding its reach and solidifying its position in the market."
     },
     {
-        "name": "John Doe",
-        "role": "CTO",
-        "profile": "https://picsum.photos/200/300",
-        "about": "John is responsible for overseeing the technological vision and strategy of the company. His deep expertise in software development and system architecture ensures that our tech stack remains cutting-edge."
+        "name": "Ummatul Aziz",
+        "role": "Chairperson",
+        "about": "ummatul Aziz is the chairperson of the phro."
     },
     {
-        "name": "Jane Smith",
-        "role": "COO",
-        "profile": "https://picsum.photos/200/300",
-        "about": "Jane leads the day-to-day operations, ensuring seamless workflows and efficient processes across all departments. Her organizational skills and keen attention to detail keep the company running smoothly."
+        "name": "Mariyam Pathan",
+        "role": "Vice president",
+        "about": "Mariyam Pathan is the vice president of the phro."
     },
     {
-        "name": "Mike Johnson",
-        "role": "head-of-Marketing",
-        "profile": "https://picsum.photos/200/300",
-        "about": "Mike is a marketing guru who knows how to build and scale brands. His campaigns are not only creative but also data-driven, delivering measurable results that have a lasting impact on our company’s growth."
-    },
-    {
-        "name": "Emily Davis",
-        "role": "chief-financial-officer",
-        "profile": "https://picsum.photos/200/300",
-        "about": "Emily ensures the financial health of the organization by managing budgets, overseeing investments, and making strategic financial decisions that align with the company’s long-term goals."
-    },
-    {
-        "name": "Robert Lee",
-        "role": "head-of-human-resources",
-        "profile": "https://picsum.photos/200/300",
-        "about": "Robert is committed to building a positive work culture and fostering employee growth. He manages recruitment, employee relations, and development programs, ensuring that we have a motivated and talented workforce."
-    },
-    {
-        "name": "Sarah Khan",
-        "role": "chief-designer",
-        "profile": "https://picsum.photos/200/300",
-        "about": "Sarah leads the creative direction of the company, bringing her artistic vision to life through compelling design work. She ensures that our brand's visual identity is consistent and engaging across all platforms."
-    },
-    {
-        "name": "David Brown",
-        "role": "head-of-sales",
-        "profile": "https://picsum.photos/200/300",
-        "about": "David is a sales powerhouse, leading his team to exceed targets and drive revenue growth. His focus on customer relationships and market expansion has been instrumental in boosting the company's sales performance."
+        "name": "Sikandar Ali",
+        "role": "Finance Secretary",
+        "about": "Sikandar Ali is the finance secretary of the phro."
     }
 ]
