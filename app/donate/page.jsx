@@ -136,71 +136,152 @@ export default function DonationPage() {
             </div>
 
             {/* National Tab Content */}
-            {activeTab === "national" && (
-              <div className="space-y-6">
-                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-medium text-gray-900 mb-4">Bank Transfer Details</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-sm text-gray-500 mb-1">IBAN</p>
-                      <div className="flex items-center justify-between bg-white p-3 rounded border border-gray-200">
-                        <code className="font-mono text-sm md:text-base">{iban}</code>
-                        <button
-                          onClick={copyToClipboard}
-                          className="ml-4 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                        >
-                          {copied ? (
-                            <>
-                              <svg
-                                className="h-4 w-4 mr-1.5 text-green-500"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
-                              Copied
-                            </>
-                          ) : (
-                            <>
-                              <svg
-                                className="h-4 w-4 mr-1.5"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                                />
-                              </svg>
-                              Copy
-                            </>
-                          )}
-                        </button>
-                      </div>
-                    </div>
-                    {/* <div>
-                      <p className="text-sm text-gray-500 mb-1">Bank</p>
-                      <p className="font-medium">PHRO International Bank</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-500 mb-1">Beneficiary</p>
-                      <p className="font-medium">PHRO Foundation</p>
-                    </div> */}
-                  </div>
-                  <div className="mt-6 bg-blue-50 p-4 rounded-md border border-blue-100">
-                    <p className="text-sm text-blue-800">
-                      Please include your name and "Donation" in the payment reference.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
+{activeTab === "national" && (
+  <>
+<div>
+  <p className="text-sm text-gray-500 mb-1">IBAN</p>
+  <div className="flex items-center justify-between bg-white p-3 rounded border border-gray-200">
+    <code className="font-mono text-sm md:text-base">PK82MEZN0017810106206404</code>
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText("PK82MEZN0017810106206404")
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      }}
+      className="ml-4 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+    >
+      {copied ? (
+        <>
+          <svg
+            className="h-4 w-4 mr-1.5 text-green-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+          Copied
+        </>
+      ) : (
+        <>
+          <svg
+            className="h-4 w-4 mr-1.5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            />
+          </svg>
+          Copy
+        </>
+      )}
+    </button>
+  </div>
+</div>
+<div>
+  <p className="text-sm text-gray-500 mb-1">Account Number</p>
+  <div className="flex items-center justify-between bg-white p-3 rounded border border-gray-200">
+    <code className="font-mono text-sm md:text-base">17810106206404</code>
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText("17810106206404")
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      }}
+      className="ml-4 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+    >
+      {copied ? (
+        <>
+          <svg
+            className="h-4 w-4 mr-1.5 text-green-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+          Copied
+        </>
+      ) : (
+        <>
+          <svg
+            className="h-4 w-4 mr-1.5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            />
+          </svg>
+          Copy
+        </>
+      )}
+    </button>
+  </div>
+</div>
+<div>
+  <p className="text-sm text-gray-500 mb-1">Bank Name:</p>
+  <div className="flex items-center justify-between bg-white p-3 rounded border border-gray-200">
+    <code className="font-mono text-sm md:text-base">Meezan Bank</code>
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText("17810106206404")
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      }}
+      className="ml-4 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+    >
+      {copied ? (
+        <>
+          <svg
+            className="h-4 w-4 mr-1.5 text-green-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+          Copied
+        </>
+      ) : (
+        <>
+          <svg
+            className="h-4 w-4 mr-1.5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+            />
+          </svg>
+          Copy
+        </>
+      )}
+    </button>
+  </div>
+</div>
+  </>
+
+)}
 
             {/* International Tab Content */}
             {activeTab === "international" && (
